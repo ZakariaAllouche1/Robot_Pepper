@@ -1,0 +1,12 @@
+<launch>
+  <arg name="urdf_file" default="$(find urdf_visualisation)/urdf/scara.urdf" />
+
+  <!-- Chargement du fichier URDF à l'aide de rosparam -->
+  <rosparam command="load" file="$(arg urdf_file)" />
+
+  <!-- Lancement de Gazebo avec le modèle URDF -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot" />
+  
+  <!-- Lancement de RVIZ pour la visualisation -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find urdf_visualisation)/rviz/config.rviz" />
+</launch>

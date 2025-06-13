@@ -1,0 +1,2 @@
+set(niryo_robot_database_MESSAGE_FILES "/home/ros/catkin_ws/src/niryo_robot_database/msg/FilePath.msg;/home/ros/catkin_ws/src/niryo_robot_database/msg/Setting.msg")
+set(niryo_robot_database_SERVICE_FILES "/home/ros/catkin_ws/src/niryo_robot_database/srv/AddFilePath.srv;/home/ros/catkin_ws/src/niryo_robot_database/srv/GetAllByType.srv;/home/ros/catkin_ws/src/niryo_robot_database/srv/GetSettings.srv;/home/ros/catkin_ws/src/niryo_robot_database/srv/RmFilePath.srv;/home/ros/catkin_ws/src/niryo_robot_database/srv/SetSettings.srv")

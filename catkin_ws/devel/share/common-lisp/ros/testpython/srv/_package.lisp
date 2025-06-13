@@ -1,0 +1,20 @@
+(cl:defpackage testpython-srv
+  (:use )
+  (:export
+   "ADDTWOINTS"
+   "<ADDTWOINTS-REQUEST>"
+   "ADDTWOINTS-REQUEST"
+   "<ADDTWOINTS-RESPONSE>"
+   "ADDTWOINTS-RESPONSE"
+   "GOTO"
+   "<GOTO-REQUEST>"
+   "GOTO-REQUEST"
+   "<GOTO-RESPONSE>"
+   "GOTO-RESPONSE"
+   "HOME"
+   "<HOME-REQUEST>"
+   "HOME-REQUEST"
+   "<HOME-RESPONSE>"
+   "HOME-RESPONSE"
+  ))
+

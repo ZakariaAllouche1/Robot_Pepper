@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<robot name="scara_robot">
+  <material name="shared_blue">
+      <color rgba="0 0 0.8 1"/>
+  </material>
+
+  <material name="shared_red">
+      <color rgba="0.8 0 0 1"/>
+  </material>
+
+  <material name="shared_green">
+      <color rgba="0 0.8 0 1"/>
+  </material>
+
+  <material name="shared_dark_gray">
+      <color rgba="0.2 0.2 0.2 1"/>
+  </material>
+
+  <material name="shared_light_gray">
+      <color rgba="0.7 0.7 0.7 1"/>
+  </material>
+
+
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://urdf_visualisation/meshes/ax12a.stl"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 3.14159 " />
+
+    <material name="shared_dark_gray"/>
+
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://urdf_visualisation/meshes/ax12a.stl"/>
+      </geometry>
+    </collision>
+   
+  </link>
+
+
+             <!-- Joint 1 -->
+  <joint name="joint1" type="revolute">
+    <parent link="base_link"/>
+    <child link="socket_1"/>
+ 
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="1.0"/>
+    <dynamics damping="0.7"/>
+  </joint>
+
+
+
+  <!-- Link 1 -->
+  <link name="link1">
+    <visual>
+      <geometry>
+        <mesh filename="package://urdf_visualisation/meshes/bras.stl"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.57079 0 1.57079" />
+    <material name="shared_red"/>
+
+    </visual>
+    
+    <collision>
+      <geometry>
+        <mesh filename="package://urdf_visualisation/meshes/bras.stl"/>
+      </geometry>
+    </collision>
+    
+    
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+  </link>
+
+
+
+
+  <!-- Joint 1 -->
+  <joint name="collage1" type="fixed">
+    <parent link="socket_1"/>
+    <child link="link1"/>
+    <origin xyz="26 0 0" rpy="0 0 0" />
+  </joint>
+
+
+        <!-- mini socket 1 -->          
+        <link name="minisocket_1">
+      <visual>
+        <geometry>
+          <mesh filename="package://urdf_visualisation/meshes/ax12-socketmini.stl"/>
+        </geometry>
+   <origin xyz="0.0 0 0" rpy="0 0 0" />
+    <material name="shared_light_gray"/>
+        
+      </visual>
+          </link>      
+
+  <!-- Joint 1 -->
+  <joint name="collage2" type="fixed">
+    <parent link="link1"/>
+    <child link="minisocket_1"/>
+    <origin xyz="26 0 0" rpy="0 0 0" />
+  </joint>
+
+
+
+
+  <!-- Link 2 -->
+  <link name="link2">
+    <visual>
+      <geometry>
+        <mesh filename="package://urdf_visualisation/meshes/bras.stl"/>
+     </geometry>
+        <origin xyz="0 0 0" rpy="1.57079 0 1.57079" />
+    <material name="shared_blue"/>
+
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://urdf_visualisation/meshes/bras.stl"/>
+        
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1" />
+      <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    </inertial>
+  </link>
+
+  <!-- Joint 2 -->
+  <joint name="joint2" type="revolute">
+    <parent link="link1"/>
+    <child link="link2"/>
+    <origin xyz="100.0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="1.0"/>
+    <dynamics damping="0.7"/>
+  </joint>
+  
+      <!-- Link 3 -->
+    <link name="link3">
+      <visual>
+        <geometry>
+          <mesh filename="package://urdf_visualisation/meshes/bras.stl"/>
+        </geometry>
+                <origin xyz="0 0 0" rpy="1.57079 0 1.57079" />
+    <material name="shared_green"/>
+        
+      </visual>
+      <collision>
+        <geometry>
+          <mesh filename="package://urdf_visualisation/meshes/bras.stl"/>
+        </geometry>
+      </collision>
+      <inertial>
+        <mass value="1" />
+        <inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+      </inertial>
+    </link>
+
+    <!-- Joint 3 -->
+  <joint name="joint3" type="revolute">
+    <parent link="link2"/>
+    <child link="link3"/>
+    <origin xyz="100.0 0 0" rpy="0 0 0" />
+    <axis xyz="0 0 1" />
+    <limit lower="-3.14159" upper="3.14159" effort="1000.0" velocity="1.0"/>
+    <dynamics damping="0.7"/>
+  </joint>
+  
+  
+        <!-- socket 1 -->
+    <link name="socket_1">
+      <visual>
+        <geometry>
+          <mesh filename="package://urdf_visualisation/meshes/ax12-socket.stl"/>
+        </geometry>
+   <origin xyz="0.0 0 0" rpy="0 1.57079 0" />
+    <material name="shared_light_gray"/>
+        
+      </visual>
+          </link>
+
+  
+  
+    <!-- Gazebo plugin for ROS Control -->
+ <!--    
+    <gazebo>
+      <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+        <robotNamespace>/scara_robot</robotNamespace>
+      </plugin>
+    </gazebo>
+-->
+
+</robot>

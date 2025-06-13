@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<robot name="scara_robot">
+  <link name="base">
+    <visual>
+      <geometry>
+        <box size="0.1 0.1 0.1"/>
+      </geometry>
+      <material name="my_material">
+        <color rgba="0 1 0 1" />  <!-- Utilisez les valeurs de 0 à 1 pour R, G, B et A (transparence) -->
+    </material>
+    </visual>
+  </link>
+
+  <link name="corps1">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.2"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="1"/>
+      <inertia ixx="0.005" ixy="0" ixz="0" iyy="0.005" iyz="0" izz="0.005"/>
+    </inertial>
+  </link>
+
+  <link name="corps2">
+    <visual>
+      <geometry>
+        <cylinder radius="0.04" length="0.15"/>
+      </geometry>
+    </visual>
+    <inertial>
+      <mass value="0.8"/>
+      <inertia ixx="0.003" ixy="0" ixz="0" iyy="0.003" iyz="0" izz="0.003"/>
+    </inertial>
+  </link>
+
+  <joint name="joint1" type="revolute">
+    <parent link="base"/>
+    <child link="corps1"/>
+    <origin xyz="0 0 0"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" lower="-3.14159" upper="3.14159" velocity="1"/>
+  </joint>
+
+  <joint name="joint2" type="revolute">
+    <parent link="corps1"/>
+    <child link="corps2"/>
+    <origin xyz="0 0 0.2"/>
+    <axis xyz="0 0 1"/>
+    <limit effort="100" lower="-3.14159" upper="3.14159" velocity="1"/>
+  </joint>
+</robot>

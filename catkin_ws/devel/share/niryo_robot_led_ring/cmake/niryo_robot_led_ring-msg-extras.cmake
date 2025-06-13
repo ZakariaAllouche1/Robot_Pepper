@@ -1,0 +1,2 @@
+set(niryo_robot_led_ring_MESSAGE_FILES "/home/ros/catkin_ws/src/niryo_robot_led_ring/msg/LedRingAnimation.msg;/home/ros/catkin_ws/src/niryo_robot_led_ring/msg/LedRingCurrentState.msg;/home/ros/catkin_ws/src/niryo_robot_led_ring/msg/LedRingStatus.msg")
+set(niryo_robot_led_ring_SERVICE_FILES "/home/ros/catkin_ws/src/niryo_robot_led_ring/srv/LedUser.srv;/home/ros/catkin_ws/src/niryo_robot_led_ring/srv/SetLedColor.srv")

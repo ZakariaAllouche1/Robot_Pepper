@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="couleur">
+
+  <material name="shared_blue">
+      <color rgba="0 0 0.8 1"/>
+  </material>
+
+  <material name="shared_red">
+      <color rgba="0.8 0 0 1"/>
+  </material>
+
+  <material name="shared_green">
+      <color rgba="0 0.8 0 1"/>
+  </material>
+
+  <material name="shared_dark_gray">
+      <color rgba="0.3 0.3 0.3 1"/>
+  </material>
+
+  <material name="shared_light_gray">
+      <color rgba="0.7 0.7 0.7 1"/>
+  </material>
+
+</xacro:macro>
+</robot>

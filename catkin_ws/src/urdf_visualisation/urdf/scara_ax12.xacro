@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<robot name="scara_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find urdf_visualisation)/urdf/robot_segment.xacro"/>
+<xacro:include filename="$(find urdf_visualisation)/urdf/couleur.xacro"/>  
+
+<!-- defini l'origine -->          
+  <link name="base_link" />
+     
+<!-- charge les couleurs de base -->
+  <xacro:couleur />
+
+  <xacro:robot_segment arm_id="1" support="base_link" couleur="shared_green"/>
+  <xacro:robot_segment arm_id="2" support="1" couleur="shared_blue"/>
+  <xacro:robot_segment arm_id="3" support="2" couleur="shared_red"/>
+
+</robot>

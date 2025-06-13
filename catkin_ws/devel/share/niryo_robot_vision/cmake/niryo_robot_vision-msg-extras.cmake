@@ -1,0 +1,2 @@
+set(niryo_robot_vision_MESSAGE_FILES "/home/ros/catkin_ws/src/niryo_robot_vision/msg/ImageParameters.msg")
+set(niryo_robot_vision_SERVICE_FILES "/home/ros/catkin_ws/src/niryo_robot_vision/srv/DebugColorDetection.srv;/home/ros/catkin_ws/src/niryo_robot_vision/srv/DebugMarkers.srv;/home/ros/catkin_ws/src/niryo_robot_vision/srv/ObjDetection.srv;/home/ros/catkin_ws/src/niryo_robot_vision/srv/SetImageParameter.srv;/home/ros/catkin_ws/src/niryo_robot_vision/srv/TakePicture.srv;/home/ros/catkin_ws/src/niryo_robot_vision/srv/Visualization.srv")

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<launch>
+
+  <node name="image_view" pkg="image_view" type="image_view" respawn="false" output="screen">
+    <remap from="image" to="/naoqi_driver/camera/front/image_raw"/>
+    <param name="autosize" value="true" />
+  </node>
+  
+    <node name="image_view_1" pkg="image_view" type="image_view" respawn="false" output="screen">
+    <remap from="image" to="/naoqi_driver/camera/bottom/image_raw"/>
+    <param name="autosize" value="true" />
+  </node>
+  
+  
+  <node name="image_view_2" pkg="image_view" type="image_view" respawn="false" output="screen">
+    <remap from="image" to="/naoqi_driver/camera/depth/image_raw"/>
+    <param name="autosize" value="true" />
+  </node>
+</launch>
+

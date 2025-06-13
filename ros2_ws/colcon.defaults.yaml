@@ -1,0 +1,5 @@
+build:
+  symlink-install: true
+  # tu peux ajouter d’autres options par défaut ici, ex. :
+  # event-handlers:
+  #   - console_cohesion+

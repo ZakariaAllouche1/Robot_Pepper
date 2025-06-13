@@ -1,0 +1,15 @@
+<launch>
+ <arg name="gui" default="false" />
+
+ <arg name="urdf_file" default="$(find urdf_visualisation)/urdf/scara_ax12.urdf" />
+
+  <!--  <param name="robot_description" textfile="$(arg urdf_file)" />  -->
+ <!-- Load the URDF into the parameter server -->
+ 
+  <param name="robot_description" command="$(find xacro)/xacro '$(find urdf_visualisation)/urdf/scara_ax12.xacro'" />
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
+
+  <!-- Lancement de RVIZ -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find urdf_visualisation)/rviz/config.rviz" />
+</launch>

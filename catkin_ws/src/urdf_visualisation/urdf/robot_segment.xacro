@@ -1,0 +1,123 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+
+
+<xacro:macro name="robot_segment" params="arm_id support couleur">
+ 
+<!-- mini socket  -->  
+
+<link name="minisocket_${arm_id}">
+	<visual>
+		<geometry>
+          		<mesh filename="package://urdf_visualisation/meshes/ax12-socketmini.stl"/>
+        		</geometry>
+   	<origin xyz="0 0 0" rpy="0 0 -1.57079" />
+    	<material name="shared_light_gray"/>
+ 	</visual>
+ </link>      
+
+
+<!-- Joint d'accoroche-->
+<xacro:if value="${support == 'base_link'}">
+<joint name="collage_base_link" type="fixed">
+    	<parent link="base_link"/>
+    	<child link="minisocket_${arm_id}"/>
+    	<origin xyz="0 0 0" rpy="0 0 0" />
+</joint>
+</xacro:if>
+
+
+<xacro:if value="${support != 'base_link'}">
+<joint name="collage_${arm_id}_0" type="fixed">
+    	<parent link="link_${support}"/>
+    	<child link="minisocket_${arm_id}"/>
+    	<origin xyz="100 0 0" rpy="0 0 0" />
+</joint>
+</xacro:if>
+
+
+
+<!-- servo -->
+<link name="servo_${arm_id}">
+	<visual>
+      		<geometry>
+        			<mesh filename="package://urdf_visualisation/meshes/ax12a.stl"/>
+      		</geometry>
+      	<origin xyz="0 0 0" rpy="0 0 3.14159 " />
+    	<material name="shared_dark_gray"/>
+    	</visual>
+    		
+    		
+    	<collision>
+     		<geometry>
+        			<mesh filename="package://urdf_visualisation/meshes/ax12a.stl"/>
+      		</geometry>
+    	</collision>
+</link>
+
+
+
+<!-- collage 1 -->
+<joint name="collage_${arm_id}_1" type="fixed">
+	<parent link="minisocket_${arm_id}"/>
+    	<child link="servo_${arm_id}"/>
+    	<origin xyz="42 0 0" rpy="0 0 0" />
+</joint>
+
+       <!-- socket 1 -->
+<link name="socket__${arm_id}">
+	<visual>
+		<geometry>
+          		<mesh filename="package://urdf_visualisation/meshes/ax12-socket.stl"/>
+        		</geometry>
+    	<origin xyz="0.0 0 0" rpy="0 1.57079 0" />
+    	<material name="shared_light_gray"/>
+        
+      	</visual>
+</link>
+
+<!-- Rotation -->
+<joint name="axe_${arm_id}" type="revolute">
+	<parent link="servo_${arm_id}"/>
+    	<child link="socket__${arm_id}"/>
+   	<axis xyz="0 0 1" />
+    	<limit lower="${-3.14159*150.0/180.0}" upper="${3.14159*150.0/180.0}" effort="1000.0" velocity="1.0"/>
+    	<dynamics damping="0.7"/>
+</joint>
+
+
+<!-- Link 1 -->
+<link name="link_${arm_id}">
+    	<visual>
+      		<geometry>
+        			<mesh filename="package://urdf_visualisation/meshes/bras.stl"/>
+      		</geometry>
+      	<origin xyz="0 0 0" rpy="1.57079 0 1.57079" />
+    	<material name="${couleur}"/>
+
+    	</visual>
+    
+    	<collision>
+      		<geometry>
+        			<mesh filename="package://urdf_visualisation/meshes/bras.stl"/>
+      		</geometry>
+    	</collision>
+    
+    
+    	<inertial>
+      		<mass value="1" />
+      		<inertia ixx="1" ixy="0" ixz="0" iyy="1" iyz="0" izz="1" />
+    	</inertial>
+</link>
+
+<!-- collage2 -->
+
+<joint name="collage_${arm_id}_2" type="fixed">
+	<parent link="socket__${arm_id}"/>
+    	<child link="link_${arm_id}"/>
+    	<origin xyz="26 0 0" rpy="0 0 0" />
+</joint>
+
+</xacro:macro>
+</robot>

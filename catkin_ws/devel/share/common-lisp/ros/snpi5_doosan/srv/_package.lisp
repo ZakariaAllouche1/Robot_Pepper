@@ -1,0 +1,25 @@
+(cl:defpackage snpi5_doosan-srv
+  (:use )
+  (:export
+   "GOTO"
+   "<GOTO-REQUEST>"
+   "GOTO-REQUEST"
+   "<GOTO-RESPONSE>"
+   "GOTO-RESPONSE"
+   "HOME"
+   "<HOME-REQUEST>"
+   "HOME-REQUEST"
+   "<HOME-RESPONSE>"
+   "HOME-RESPONSE"
+   "PRISE"
+   "<PRISE-REQUEST>"
+   "PRISE-REQUEST"
+   "<PRISE-RESPONSE>"
+   "PRISE-RESPONSE"
+   "REPOS"
+   "<REPOS-REQUEST>"
+   "REPOS-REQUEST"
+   "<REPOS-RESPONSE>"
+   "REPOS-RESPONSE"
+  ))
+

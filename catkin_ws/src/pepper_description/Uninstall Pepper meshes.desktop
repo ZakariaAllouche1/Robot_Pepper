@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=0.9.4
+Name=Uninstall Pepper meshes
+Comment=Uninstall
+Icon=
+Exec=/home/ros/catkin_ws/src/pepper_robot/pepper_description/uninstall
+Terminal=false
+Path=/home/ros/catkin_ws/src/pepper_robot/pepper_description
