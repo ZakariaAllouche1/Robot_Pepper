@@ -53,23 +53,19 @@ setup(
     version='0.0.1',
     packages=find_packages(include=[package_name, f"{package_name}.*"]),
     data_files=[
-        # ament index
         ('share/ament_index/resource_index/packages',
             ['resource/' + package_name]),
-        # package.xml
         ('share/' + package_name, ['package.xml']),
-        # launch folder
         (os.path.join('share', package_name, 'launch'),
             glob(os.path.join('launch', '*launch.[pxy][yma]*'))),
-        # votre modèle NCNN exporté
-        (os.path.join('share', package_name, 'yolov8s_ncnn_model'),
-            glob(os.path.join('yolov8s_ncnn_model', '*'))),
+        (os.path.join('share', package_name, 'yolov8n_ncnn_model'),
+            glob(os.path.join('yolov8n_ncnn_model', '*'))),
     ],
     install_requires=[
         'setuptools',
         'ncnn',
         'opencv-python',
-        'ultralytics==8.2.0',  # pour l’export si nécessaire
+        'ultralytics',  
     ],
     zip_safe=True,
     maintainer='ros',
