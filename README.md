@@ -14,7 +14,7 @@ Ce document présente les étapes nécessaires pour lancer et utiliser le code R
 
 ## Pré-requis
 
-Assurez-vous d’avoir installé les pré-requis suivants :
+Assurez-vous d’avoir les pré-requis suivants :
 
 * Ubuntu 20.04
 * ROS 1 Noetic
