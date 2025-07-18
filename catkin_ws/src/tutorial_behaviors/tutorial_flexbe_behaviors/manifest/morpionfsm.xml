@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<behavior name="MorpionFSM">
+
+	<executable package_path="tutorial_flexbe_behaviors.morpionfsm_sm" class="MorpionFSMSM" />
+	<tagstring></tagstring>
+	<author>Zakaria</author>
+	<date>Wed Jul 09 2025</date>
+	<description>
+		machine a etat morpion
+	</description>
+
+
+	<!-- Contained Behaviors -->
+
+	<!-- Available Parameters -->
+
+</behavior>
