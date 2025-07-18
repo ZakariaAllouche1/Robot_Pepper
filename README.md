@@ -80,6 +80,12 @@ roslaunch flexbe_app flexbe_full.launch
 
 > Après le lancement de FlexBe, sélectionnez **Load Behavior**, choisissez **MorpionFSM**, puis cliquez sur **Runtime Control** et **Start Execution**.
 
+### Lancement des noeuds du morpion ROS 2
+
+```bash
+use_ros2
+ros2 launch morpion morpion_launch.py
+```
 ### Changement de résolution de la caméra
 
 Pour modifier la résolution de la caméra du robot Pepper, éditez le fichier `boot_config.json` :
