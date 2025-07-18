@@ -172,3 +172,34 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+
+# Artefacts Catkin
+catkin_ws/build/
+catkin_ws/devel/
+catkin_ws/log/
+catkin_ws/install/
+
+# Artefacts ROS 2
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+
+# Données lourdes ou temporaires
+*.bag
+*.zip
+
+# Métadonnées Python compilées
+__pycache__/
+*.py[cod]
+
+# IDEs et éditeurs
+.vscode/
+.idea/
+*.swp
+*~
+
+# Submodules Git (ignore les .git des sous‑dossiers)
+**/.git/
+
